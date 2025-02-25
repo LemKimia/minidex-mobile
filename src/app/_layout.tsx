@@ -4,7 +4,7 @@ import { config } from '@/tamagui.config'
 
 const RootLayout = () => {
   return (
-    <TamaguiProvider config={config}><Stack/></TamaguiProvider>
+    <TamaguiProvider config={config}><Stack><Stack.Screen name="index" options={{headerShown: false}}/></Stack></TamaguiProvider>
   );
 }
 export default RootLayout;

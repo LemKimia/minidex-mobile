@@ -2,7 +2,7 @@ import {View, Text} from "@tamagui/core";
 
 const HomeScreen = () => {
   return (
-    <View margin={10}>
+    <View my={2}>
       <Text color="$color">Hello</Text>
     </View>
   )
