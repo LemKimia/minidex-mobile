@@ -9,7 +9,7 @@ type PokemonStoreType = {
   setPaginationPrevUrl: (paginationPrevUrl: string) => void
 }
 
-export const PokemonStore = create<PokemonStoreType>((set)=>({
+export const usePokemonStore = create<PokemonStoreType>((set)=>({
   currentPageUrl: "https://pokeapi.co/api/v2/pokemon",
   paginationNextUrl: "",
   paginationPrevUrl: "",

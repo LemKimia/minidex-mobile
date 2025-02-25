@@ -1,11 +1,11 @@
-export interface IResult {
+export type IResponse<IPokemon> = {
   count: number;
   next: string;
   previous: string;
   results: IPokemon[]
 }
 
-export interface IPokemon {
+export type IPokemon = {
   name: string;
   url: string;
 }
