@@ -3,7 +3,7 @@ import {create} from 'zustand';
 type PokemonStoreType = {
   currentPageUrl: string;
   paginationNextUrl: string
-  paginationPrevUrl: string
+  paginationPrevUrl: string | null
   setCurrentPageUrl: (currentPageUrl: string) => void;
   setPaginationNextUrl: (paginationNextUrl: string) => void
   setPaginationPrevUrl: (paginationPrevUrl: string) => void
@@ -16,5 +16,4 @@ export const usePokemonStore = create<PokemonStoreType>((set)=>({
   setCurrentPageUrl: (currentPageUrl: string) => set({currentPageUrl}),
   setPaginationPrevUrl: (paginationPrevUrl: string) => set({paginationPrevUrl}),
   setPaginationNextUrl: (paginationNextUrl: string) => set({paginationNextUrl}),
-
 }))

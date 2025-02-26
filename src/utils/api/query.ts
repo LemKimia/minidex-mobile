@@ -1,16 +1,12 @@
 import {useQuery} from "@tanstack/react-query";
 import apiRequest from "@/src/utils/api/api";
+import {usePokemonStore} from "@/src/utils/store/pokemon-store";
 
-const apiRequestQuery = {
-  fetchPokemon() {
-    const {data, isLoading} = useQuery({
-      queryFn: apiRequest.getPokemon,
-      queryKey: ["getPokemon"],
-    })
-    return {
-      pokemon: data, fetchingPokemon: isLoading
-    }
-  }
+export const useFetchPokemon = () => {
+  const currentPageUrl = usePokemonStore.getState().currentPageUrl;
+  return useQuery({
+    queryKey: ['getPokemon'],
+    queryFn: ()=> apiRequest.getPokemon(currentPageUrl),
+  })
 }
 
-export default apiRequestQuery
