@@ -2,7 +2,7 @@ export type IResponse<IPokemon> = {
   count: number;
   next: string;
   previous: string;
-  results: IPokemon[]
+  results: IPokemon
 }
 
 export type IPokemon = {
